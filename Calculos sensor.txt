@@ -1,0 +1,21 @@
+SENSOR:
+FS = 40kPa = 300,025mmHg = 0,07V
+Sensibilidade = 0,07V/300,025mmHg = 0,0002333V/mmHG
+
+PROTOTIPO
+FS = 40mmHg = 40mmHG x 0,0002333V = 0,009333V
+--> Normalizando ao FS do uC
+0mmHg = 0,29V
+40mmHg = 3,5V
+
+Ganho = (3,5 - 0,29) / (0,009333 - 0) = 343,94
+
+CIRCUITO
+Ganho estagio 1:
+A1 = 20
+
+Ganho estagio 2:
+A2 = 10
+
+Ganho global = 200
+Ganho necessário no codigo = 343,94/200 = 1,719
